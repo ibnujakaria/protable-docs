@@ -1,6 +1,14 @@
 module.exports = {
   title: 'Pro Table',
   description: 'A DataTable alternative. Written with modern javascript.',
+  plugins: [
+    [
+      '@vuepress/google-analytics',
+      {
+        'ga': process.env.GA_ID || ''
+      }
+    ]
+  ],
   themeConfig: {
     searchPlaceholder: 'Search..',
     lastUpdated: 'Last Updated',
