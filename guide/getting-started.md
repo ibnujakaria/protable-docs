@@ -130,7 +130,7 @@ current html.
 Here's what the js script looks like:
 
 ```js
-import { fromArray } from 'pro-table'
+import { fromTable } from 'pro-table'
 
 fromTable('#table-city')
 ```
