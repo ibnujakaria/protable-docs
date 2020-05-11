@@ -12,14 +12,17 @@ module.exports = {
     sidebar: {
       '/guide/': [
         '',
-        'getting-started'
+        'getting-started',
+        'custom-content',
+        'pagination',
+        'sort',
+        'search'
       ]
     },
-    repo: {
-      link: 'https://github.com/ibnujakaria/pro-table',
-      repoLabel: 'Github',
-      editLinks: true,
-      editLinkText: 'Improve this page'
-    }
+    repo: 'ibnujakaria/pro-table',
+    repoLabel: 'Github',
+    docsRepo: 'ibnujakaria/pro-table-docs',
+    editLinks: true,
+    editLinkText: 'Improve this page'
   }
 }
