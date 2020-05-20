@@ -24,7 +24,8 @@ module.exports = {
         'custom-content',
         'pagination',
         'sort',
-        'filter'
+        'filter',
+        'styling'
       ]
     },
     repo: 'ibnujakaria/pro-table',
