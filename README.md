@@ -88,6 +88,7 @@ export default {
   /* border: 1px solid #dfe2e5; */
   box-shadow: 0 1rem 8rem rgba(0,0,0,0.06);
   margin: 2rem 0rem;
+  overflow-x: auto;
 }
 
 .badge {
