@@ -14,16 +14,20 @@ For example, by using this data:
 const data = [
   {
     name: 'Fulan bin Fulan',
-    city: 'Surabaya'
+    city: 'Surabaya',
+    gender: 'Male'
   },
   {
     name: 'Fulanah binti Fulan',
-    city: 'Jakarta'
+    city: 'Jakarta',
+    gender: 'Female'
   }
 ]
 ```
 
 ProTable will then generate two columns with label `Name` and `City`.
+
+**ProTable Output:**
 
 <div id="protable-1"></div>
 
@@ -36,27 +40,64 @@ fromArray('#table-container', data, {
       label: 'Full Name'
     },
     city: {
-      label: 'Addr'
+      label: 'Address'
     }
   }
 })
 ```
 
+**ProTable Output:**
 <div id="protable-2"></div>
+
+### Display Only Some Columns
+
+If you only want to display some columns of your data, you can do that as follows:
+
+```js
+fromArray('#protable-3', {
+  columns: ['name', 'gender'],
+  rows: data
+})
+```
+
+**ProTable Output:**
+<div id="protable-3"></div>
 
 ## Custom Cell
 
-## Custom Footer
+You can also custom your cell content by passing a callback to `options.contents`.
+
+```js
+fromArray('#protable-4', data, {
+  contents: {
+    name: content => content.toUpperCase(),
+    city: content => content.split('').join('-'),
+    gender: content => {
+      const span = document.createElement('span')
+
+      span.innerText = content
+      span.style.color = content === 'Male' ? '#3eaf7c' : '#ff7675'
+
+      return span
+    }
+  }
+})
+```
+
+**ProTable Output:**
+<div id="protable-4"></div>
 
 <script>
 const data = [
   {
     name: 'Fulan bin Fulan',
-    city: 'Surabaya'
+    city: 'Surabaya',
+    gender: 'Male'
   },
   {
     name: 'Fulanah binti Fulan',
-    city: 'Jakarta'
+    city: 'Jakarta',
+    gender: 'Female'
   }
 ]
 
@@ -70,15 +111,35 @@ export default {
   },
   methods: {
     onLoad () {
-      ProTable.fromArray('#protable-1', data, { search: false })
+      ProTable.fromArray('#protable-1', data)
+
       ProTable.fromArray('#protable-2', data, {
-        search: false,
         columns: {
           name: {
             label: 'Full Name'
           },
           city: {
-            label: 'Addr'
+            label: 'Address'
+          }
+        }
+      })
+
+      ProTable.fromArray('#protable-3', {
+        columns: ['name', 'gender'],
+        rows: data
+      })
+
+      ProTable.fromArray('#protable-4', data, {
+        contents: {
+          name: content => content.toUpperCase(),
+          city: content => content.split('').join('-'),
+          gender: content => {
+            const span = document.createElement('span')
+
+            span.innerText = content
+            span.style.color = content === 'Male' ? '#3eaf7c' : '#ff7675'
+
+            return span
           }
         }
       })
