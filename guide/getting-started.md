@@ -11,7 +11,7 @@ You can install ProTable with several ways.
 ### Using CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/pro-table/dist/pro-table.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pro-table@0.1.0/dist/js/pro-table.min.js"></script>
 ```
 
 You can access object `ProTable` globally after the script is being derived.
