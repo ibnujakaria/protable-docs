@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Pro Table',
+  title: 'ProTable',
   description: 'A DataTable alternative. Written with modern javascript.',
   plugins: [
     [
