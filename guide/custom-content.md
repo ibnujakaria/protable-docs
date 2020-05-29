@@ -170,7 +170,7 @@ import { fromTable } from 'pro-table'
 fromTable('#protable-5', {
   contents: {
     ['Contact Person']: content => {
-      return `&#9743; ${content}`
+      return `☏ ${content}`
     },
     Country: content => {
       const span = document.createElement('span')
@@ -317,7 +317,7 @@ export default {
       ProTable.fromTable('#protable-5', {
         contents: {
           ['Contact Person']: content => {
-            return `&#9743; ${content}`
+            return `☏ ${content}`
           },
           Country: content => {
             const span = document.createElement('span')
