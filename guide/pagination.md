@@ -199,7 +199,7 @@ Now, your generated DOM will completely match the Bootstrap 4 pagination structu
 ```
 
 <script>
-import 'pro-table/dist/js/pro-table.js'
+import { fromArray } from 'pro-table'
 
 export default {
   mounted () {
@@ -210,7 +210,7 @@ export default {
       const response = await fetch('/data/employee-dummy.json')
       const employees = await response.json()
 
-      ProTable.fromArray('#protable-1', {
+      fromArray('#protable-1', {
         columns: ['no', 'name', 'gender', 'email', 'phone'],
         rows: employees
       }, {
@@ -223,7 +223,7 @@ export default {
         }
       })
 
-      ProTable.fromArray('#protable-2', {
+      fromArray('#protable-2', {
         columns: ['no', 'name', 'gender', 'email', 'phone'],
         rows: employees
       }, {
