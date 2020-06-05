@@ -165,7 +165,7 @@ ProTable will use the `innerText` of every `th` as column keys.
 So if you want to change the `Contact Person` cell content, you have to pass `['Contact Person']()` as callback.
 
 ```js
-import { fromTable } from 'pro-table'
+import { fromTable } from 'protable'
 
 fromTable('#protable-5', {
   contents: {
@@ -274,7 +274,7 @@ const data = [
 export default {
   mounted () {
     const script = document.createElement('script')
-    script.src = 'https://cdn.jsdelivr.net/npm/pro-table@0.1.0/dist/js/pro-table.min.js'
+    script.src = 'https://cdn.jsdelivr.net/npm/protable@0.1.3/dist/protable.min.js'
     script.addEventListener('load', this.onLoad)
 
     document.body.append(script)

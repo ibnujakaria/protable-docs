@@ -7,7 +7,7 @@ ProTable provides you a pagination feature out of the box. On this guide, we wil
 Without any configuration, the pagination is enabled by default. However, if you want to disable it, you can pass `false` to `pagination` options:
 
 ```js
-import { fromArray } from 'pro-table'
+import { fromArray } from 'protable'
 
 const data = [
   // data
@@ -199,7 +199,7 @@ Now, your generated DOM will completely match the Bootstrap 4 pagination structu
 ```
 
 <script>
-import { fromArray } from 'pro-table'
+import { fromArray } from 'protable'
 
 export default {
   mounted () {

@@ -11,7 +11,7 @@ You can install ProTable with several ways.
 ### Using CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/pro-table@0.1.2/dist/pro-table.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/protable@0.1.3/dist/protable.min.js"></script>
 ```
 
 You can access object `ProTable` globally after the script is being derived.
@@ -19,7 +19,7 @@ You can access object `ProTable` globally after the script is being derived.
 ### Using NPM
 
 ```bash
-npm i pro-table
+npm i protable
 ```
 
 ## Basic Usage
@@ -37,7 +37,7 @@ HTML:
 Javascript:
 
 ```js
-import { fromArray } from 'pro-table'
+import { fromArray } from 'protable'
 
 fromArray('#container', [
   {
@@ -130,7 +130,7 @@ current html.
 Here's what the js script looks like:
 
 ```js
-import { fromTable } from 'pro-table'
+import { fromTable } from 'protable'
 
 fromTable('#table-city')
 ```

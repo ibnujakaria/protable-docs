@@ -64,7 +64,7 @@ ProTable.fromArray('#protable', data, {
 <div id="protable-3"></div>
 
 <script>
-import { fromArray } from 'pro-table'
+import { fromArray } from 'protable'
 
 export default {
   mounted () {

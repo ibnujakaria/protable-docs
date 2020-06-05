@@ -27,7 +27,7 @@ The options above will set `gender` and `phone` columns to be unorderable.
 <div id="protable-1"></div>
 
 <script>
-import { fromArray } from 'pro-table'
+import { fromArray } from 'protable'
 
 export default {
   mounted () {

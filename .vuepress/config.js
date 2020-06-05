@@ -28,9 +28,9 @@ module.exports = {
         'styling'
       ]
     },
-    repo: 'ibnujakaria/pro-table',
+    repo: 'ibnujakaria/protable',
     repoLabel: 'Github',
-    docsRepo: 'ibnujakaria/pro-table-docs',
+    docsRepo: 'ibnujakaria/protable-docs',
     editLinks: true,
     editLinkText: 'Improve this page'
   }
