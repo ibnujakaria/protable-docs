@@ -25,7 +25,15 @@ module.exports = {
         'pagination',
         'sort',
         'filter',
-        'styling'
+        {
+          title: 'Styling',
+          path: '/guide/styling/',
+          collapsable: false,
+          children: [
+            '/guide/styling/',
+            '/guide/styling/templates'
+          ]
+        }
       ]
     },
     repo: 'ibnujakaria/protable',
