@@ -246,9 +246,63 @@ The result of above options looks like:
 </table>
 ```
 
+## Search
+
+With no configuration, the generated DOM structure of ProTable search input will look like this:
+
+```html
+<input type="text" placeholder="Search" style="width: fit-content; display: inline-block;">
+```
+
+### Classes
+
+You can add `classes` to the input by passing `options.search.classes` array to ProTable instance.
+
+```js
+const options = {
+  search: {
+    classes: ['form-control', 'form-control-sm']
+  }
+}
+```
+
+```html
+<input
+  type="text"
+  class="form-control form-control-sm"
+  placeholder="Search"
+  style="width: fit-content; display: inline-block;">
+```
+
+### Wrapper
+
+If you need a wrapper element. You can add it by passing `options.search.wrapperElement` string and `options.search.wrapperClasses` array.
+
+```js
+const options = {
+  search: {
+    classes: ['form-control', 'form-control-sm'],
+    wrapperElement: 'section',
+    wrapperClasses: ['p-2']
+  }
+}
+```
+
+The result of above options will look like this:
+
+```html
+<section class="p-2">
+  <input
+    type="text"
+    class="form-control form-control-sm"
+    placeholder="Search"
+    style="width: fit-content; display: inline-block;">
+</section>
+```
+
 ## Pagination
 
-By default, the DOM-generated of the pagination looks like this:
+By default, the generated DOM structure of ProTable pagination looks like this:
 
 ```html
 <div>
