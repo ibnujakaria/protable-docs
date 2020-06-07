@@ -8,7 +8,7 @@ ProTable provided some [templateOptions](/guide/styling/templates) for popular c
 
 ## THead
 
-The `<thead>` tag contains (some) `<tr>` and also `<th>`. You can setting the classes of each of those tags by passing `options.thead`.
+The `<thead>` tag contains (some) `<tr>` and also `<th>`. You can setting the classes of each of those tags by passing `options.thead` object.
 
 ### classes
 
@@ -87,15 +87,89 @@ The result of above options looks like:
 
 ## TBody
 
+The `<tbody>` tag contains `<tr>`s and also `<td>`s. You can setting the classes of each of those tags by passing `options.tbody` object.
+
 ### classes
+
+The `options.tbody.classses` array will set `classList` of `<tbody>` tag.
+
+```js
+const options = {
+  tbody: {
+    classes: ['p-2', 'mt-2']
+  }
+}
+```
+
+The result of above options looks like:
+
+```html
+<table>
+  <!-- ... -->
+  <tbody class="p-2 mt-2">
+    <!-- ... -->
+  </tbody>
+  <!-- ... -->
+</table>
+```
 
 ### trClasses
 
+You can pass `options.tbody.trClasses` array to set the `classList` of each `tbody > tr` tags.
+
+```js
+const options = {
+  tbody: {
+    trClasses: ['p-2', 'bg-gray-200']
+  }
+}
+```
+
+The result of above options looks like:
+
+```html
+<table>
+  <!-- ... -->
+  <tbody>
+    <tr class="p-2 bg-gray-200">
+      <!-- ... -->
+    </tr>
+  </tbody>
+  <!-- ... -->
+</table>
+```
+
 ### tdClasses
+
+You can pass `options.tbody.tdClasses` array to set the `classList` of each `tbody > tr` tags.
+
+```js
+const options = {
+  tbody: {
+    tdClasses: ['p-2', 'bg-gray-200']
+  }
+}
+```
+
+The result of above options looks like:
+
+```html
+<table>
+  <!-- ... -->
+  <tbody>
+    <tr>
+      <td class="p-2 bg-gray-200" colspan="..">
+        <!-- Pagination -->
+      </td>
+    </tr>
+  </tbody>
+  <!-- ... -->
+</table>
+```
 
 ## TFoot
 
-The `<tfoot>` tag contains (some) `<tr>` and also `<td>`. You can setting the classes of each of those tags by passing `options.tfoot`.
+The `<tfoot>` tag contains (some) `<tr>` and also `<td>`. You can setting the classes of each of those tags by passing `options.tfoot` object.
 
 ### classes
 
@@ -173,3 +247,111 @@ The result of above options looks like:
 ```
 
 ## Pagination
+
+By default, the DOM-generated of the pagination looks like this:
+
+```html
+<div>
+  <button>Prev</button>
+  <button>1</button>
+  <button>2</button>
+  <button>2</button>
+  <button>Next</button>
+</div>
+```
+
+By using several options, you can change the DOM structure and its styling.
+
+Use `containerElement` and `containerClasses` to modify the default `<div>` container of pagination.
+
+```js
+fromArray('#table-id', data, {
+  pagination: {
+    type: 'default',
+    containerElement: 'ul',
+    containerClasses: [
+      'pagination', 'pagination-sm'
+    ]
+  }
+})
+```
+
+Now your generated DOM will look like this:
+
+```html
+<ul class="pagination pagination-sm">
+  <button>Prev</button>
+  <button>1</button>
+  <button>2</button>
+  <button>2</button>
+  <button>Next</button>
+</ul>
+```
+
+And to wrap the buttons with another element, you set the `btnWrapper`, `btnWrapperClasses`, `btnWrapperActiveClasses` attributes of pagination options object.
+
+```js
+fromArray('#table-id', data, {
+  pagination: {
+    type: 'default',
+    containerElement: 'ul',
+    containerClasses: [
+      'pagination', 'pagination-sm'
+    ],
+    btnWrapper: 'li',
+    btnWrapperClasses: [
+      'page-item'
+    ],
+    btnWrapperActiveClasses: [
+      'active'
+    ],
+  }
+})
+```
+
+The last thing, you can also change button element add classes for the button elements by using `btnElement` and `btnClasses` attributes.
+
+```js
+fromArray('#table-id', data, {
+  pagination: {
+    type: 'default',
+    containerElement: 'ul',
+    containerClasses: [
+      'pagination', 'pagination-sm'
+    ],
+    btnWrapper: 'li',
+    btnWrapperClasses: [
+      'page-item'
+    ],
+    btnWrapperActiveClasses: [
+      'active'
+    ],
+    btnElement: 'a',
+    btnClasses: [
+      'page-link'
+    ]
+  }
+})
+```
+
+Now, your generated DOM will completely match the Bootstrap 4 pagination structure:
+
+```html
+<ul class="pagination pagination-sm">
+  <li class="page-item">
+    <a class="page-link">Prev</a>
+  </li>
+  <li class="page-item active">
+    <a class="page-link">1</a>
+  </li>
+  <li class="page-item">
+    <a class="page-link">2</a>
+  </li>
+  <li class="page-item">
+    <a class="page-link">2</a>
+  </li>
+  <li class="page-item">
+    <a class="page-link">Next</a>
+  </li>
+</ul>
+```
